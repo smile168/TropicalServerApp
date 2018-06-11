@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://TropicalServer.com/WebService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://TropicalServer.com/WebService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://TropicalServer.com/WebService">
+      <s:element name="getCustId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getCustIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustId" />
+  </wsdl:message>
+  <wsdl:message name="getCustIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TropicalServerWebServiceSoap">
+    <wsdl:operation name="getCustId">
+      <wsdl:input message="tns:getCustIdSoapIn" />
+      <wsdl:output message="tns:getCustIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TropicalServerWebServiceSoap" type="tns:TropicalServerWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCustId">
+      <soap:operation soapAction="http://TropicalServer.com/WebService/getCustId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TropicalServerWebServiceSoap12" type="tns:TropicalServerWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCustId">
+      <soap12:operation soapAction="http://TropicalServer.com/WebService/getCustId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TropicalServerWebService">
+    <wsdl:port name="TropicalServerWebServiceSoap" binding="tns:TropicalServerWebServiceSoap">
+      <soap:address location="http://localhost:55254/TropicalServerWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TropicalServerWebServiceSoap12" binding="tns:TropicalServerWebServiceSoap12">
+      <soap12:address location="http://localhost:55254/TropicalServerWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

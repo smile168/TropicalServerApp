@@ -1,0 +1,84 @@
+﻿/* Products
+----------------------------------------------------------*/
+
+.productCategories
+{
+    width: 738px;
+    height:616px;
+
+    padding-left:auto;
+    padding-right:auto;
+    text-align:center;  
+}
+
+.productCategoriesLabel
+{
+    margin-top:5px;
+    width:200px;
+    font-size:15px;
+    background-color:#0047ba;
+    padding-top:15px;
+    padding-bottom:10px;
+    text-align:center;    
+    color:white;
+    font:bold;
+    
+}
+.productCategoriesLabelitem 
+{
+    margin-top:5px;
+    width:180px;
+    font-size:15px;
+    background-color:#307D7E;
+    text-align:center;    
+    color:white;
+}
+
+.imageStyle
+{
+    width:150px;
+    height:18px;
+    margin:5px 0;
+}
+
+.chartdisplay
+{
+    float:right;
+    width:600px;
+    height:600px;
+    background-color:#FFFFFF;
+    position:fixed;
+    right:0px
+    
+}
+
+.dataGrid
+{
+    margin:5px;
+    color:Black;
+    font-family:Calibri;
+    font-size:12px;   
+    border-color:black;
+    width:768px;
+}
+.chartHeaderStyle
+{
+    background-color:#307D7E;
+    font-weight:bold;
+    color:white;
+    text-align:left;
+        
+}
+.chartItemStyle
+{
+    background-color:#98AFC7;
+    color:Black;
+    text-align:left;
+    height:30px;
+}
+.chartAlternatingItemStyle
+{    
+    background-color:#C6DEFF;
+    color:black;    
+    height:30px;
+}
